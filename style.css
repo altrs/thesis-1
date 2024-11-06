@@ -5,7 +5,9 @@ body {
       cursor: none;
       font-family: Arial Light, sans-serif;
       background: url('background.png');
+      -webkit-font-smoothing: antialiased;
 }
+
 
 @keyframes pulse {
       0%, 100% {transform: translate(-50%, -50%) scale(1);}
@@ -25,6 +27,13 @@ body {
       z-index: 999;
 }
 
+.cursor p{
+      font-size: 10px;
+      weight: 100;
+      pointer-events: none;
+      transform: translate(35%, -60%);
+}
+
 .fullscreen{
       width: 100vw;
       height: 100vh;
@@ -39,12 +48,12 @@ body {
 }
 
 h1 {
-    font-family: "Roboto", sans-serif;
-    font-stretch: expanded;
-    font-size: 2rem;
-    text-transform: uppercase;
-    white-space: nowrap;
-    margin-top: 30px;
+      font-family: "Roboto", sans-serif;
+      font-stretch: expanded;
+      font-size: 2rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin-top: 30px;
 }
 
 h1 span {
@@ -73,17 +82,17 @@ h1 span.be-bold {
 }
 
 .abstract {
-    width: 250px;
-    height: 230px;
+    width: 240px;
+    height: 240px;
     border: 1px solid;
     padding: 10px;
     text-align: left;
     margin: 13% 0% 0% 1%;
-    overflow: hidden; /* Ensures text doesn't go outside div */
+    overflow: hidden;
 }
 
 .animated-text2 {
-    display: inline-block; /* Required to animate position */
+    display: inline-block;
     animation: sideToSide 7s infinite alternate;
     font-weight: bold;
     margin-top: 5px;
@@ -91,7 +100,7 @@ h1 span.be-bold {
 
 @keyframes sideToSide {
     0% {transform: translateX(0);}
-    100% {transform: translateX(150px);}
+    100% {transform: translateX(130px);}
 }
 
 

@@ -18,16 +18,14 @@
 
 			<div class="abstract">
 				<p class="animated-text2"><b>ABSTRACT</b></p>
-				<p>MY COMPUTER TOLD ME SO is an investigation of de-shaming spaces through a interactive web publication and physical gadgets. The aim of the piece is to engage viewers through game-like experiences, and demonstrate a digital realm that supports its users, rather than exploits them.</p>
+				<p>MY COMPUTER TOLD ME SO is a dissection of technology’s relationship with human shame through an interactive web publication and physical gadgets. The aim of this project is to demonstrate a digital realm of healthy humility, ultimately supporting its users, rather than exploits them.</p>
 			</div>
 
 		</div>
 
 	</div>
 
-
-	<div class="cursor"></div>
-	<script src="script.js"/></script>
+	<div class="cursor"><p>+</p></div>
 	<script>
 
 		// CURSOR EFFECT
@@ -37,6 +35,18 @@
 		    cursor.style.left = `${e.pageX}px`;
 		    cursor.style.top = `${e.pageY}px`;
 		});
+
+		function toggleCursorText(show) {
+		    const cursorText = document.querySelector('.cursor p');
+		    if (cursorText) {
+		        cursorText.style.display = show ? 'block' : 'none';
+		    }
+		    if (cursor) {
+		        cursor.style.backgroundColor = show ? '#ffff0080' : ''; // Set background to yellow when text is visible
+		    }
+		}
+		toggleCursorText(false);
+
 
 		//TITLE ANIMATION
 		document.addEventListener("DOMContentLoaded", () => {
@@ -61,6 +71,7 @@
 		    setInterval(animateText, 2000);
 		});
 	</script>
+	<script src="script.js"/></script>
 
 </body>
 </html>

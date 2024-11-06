@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Thesis Proof</title>
+	<script src="https://unpkg.com/konva@9/konva.min.js"></script>
+	<style>
+		* {
+		  box-sizing: border-box;
+		  margin: 0;
+		  padding: 0;
+		}
+
+		body {
+		  font-family: Arial, sans-serif;
+		  margin: 10px;
+		}
+
+		.container{
+			margin-top: 20px;
+		}
+
+		.grid {
+		  display: grid;
+		  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		  gap: 25px;
+		  width: 80%;
+		  max-width: 800px;
+		}
+
+		.grid-item {
+		  position: relative;
+		  overflow: hidden;
+		  cursor: pointer;
+		  transition: transform 0.3s ease;
+		  border: 1px solid;
+		}
+
+		.grid-item:hover {
+		  transform: scale(1.1);
+		}
+
+		.grid-item img {
+		  width: 100%;
+		  height: 100%;
+		  object-fit: cover;
+		  transition: opacity 0.3s ease;
+		}
+
+		.grid-item .overlay {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  background-color: rgba(0, 0, 0, 0.7);
+		  color: #fff;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  opacity: 0;
+		  transition: opacity 0.3s ease;
+		  font-size: 18px;
+		  text-align: center;
+		  padding: 10px;
+		}
+
+		.grid-item:hover .overlay {
+		  opacity: 1;
+		}
+
+		.grid-item:hover img {
+		  opacity: 0.3;
+		}
+
+	</style>
+</head>
+<body>
+
+<h1>GAMES DIRECTORY</h1>
+<h3>Here the user will see all the different games that are on the webpage, as well as short descriptions.</h3>
+
+<div class="container">
+
+ <div class="grid">
+    <div class="grid-item">
+      <img src="gtemp1.png" alt="Image 1">
+      <div class="overlay"><p>EYES</p></div>
+    </div>
+    <div class="grid-item">
+      <img src="gtemp1.png" alt="Image 2">
+      <div class="overlay">MOUTH</div>
+    </div>
+    <div class="grid-item">
+      <img src="gtemp1.png" alt="Image 3">
+      <div class="overlay">HANDS</div>
+    </div>
+    <div class="grid-item">
+      <img src="gtemp1.png" alt="Image 3">
+      <div class="overlay">SKIN</div>
+    </div>
+    <div class="grid-item">
+      <img src="gtemp1.png" alt="Image 3">
+      <div class="overlay">Resume</div>
+    </div>
+    <div class="grid-item">
+      <img src="gtemp1.png" alt="Image 3">
+      <div class="overlay">Meaningless contracts</div>
+    </div>
+    <div class="grid-item">
+      <img src="gtemp1.png" alt="Image 3">
+      <div class="overlay">rituals of hospitality</div>
+    </div>
+    <div class="grid-item">
+      <img src="gtemp1.png" alt="Image 3">
+      <div class="overlay">Forgetting machine</div>
+    </div>
+    <div class="grid-item">
+      <img src="gtemp1.png" alt="Image 3">
+      <div class="overlay">Connotation maker</div>
+    </div>
+    <div class="grid-item">
+      <img src="gtemp1.png" alt="Image 3">
+      <div class="overlay">Bartering with technology</div>
+    </div>
+    <div class="grid-item">
+      <img src="gtemp1.png" alt="Image 3">
+      <div class="overlay">Data obfuscator</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+	
+
+</script>
+
+</body>
+</html>

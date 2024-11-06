@@ -146,12 +146,23 @@ c1.on('mouseenter', () => {
     c1.fill('#555');          // Change text color on hover
     c1.fontStyle('bold');      // Make text bold on hover
     layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(true);
+    toggleLine('eyes', 'show');  // Shows line1
+    toggleLine('hands', 'hide');  // Shows line1
+    toggleLine('mouth', 'hide');  // Shows line1
+    toggleLine('skin', 'hide');  // Shows line5
+    toggleLine('roots', 'hide');  // Shows line5
 });
 
 c1.on('mouseleave', () => {
     c1.fill('#000');           // Reset text color
     c1.fontStyle('normal');    // Reset font style
     layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(false);
+});
+
+c1.on('click', () => {
+    window.location = 'my-computers-eyes.html'
 });
 
 
@@ -174,12 +185,23 @@ c2.on('mouseenter', () => {
     c2.fill('#555');          // Change text color on hover
     c2.fontStyle('bold');      // Make text bold on hover
     layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(true);
+    toggleLine('eyes', 'hide');  // Shows line1
+    toggleLine('hands', 'show');  // Shows line1
+    toggleLine('mouth', 'hide');  // Shows line1
+    toggleLine('skin', 'hide');  // Shows line5
+    toggleLine('roots', 'hide');  // Shows line5
 });
 
 c2.on('mouseleave', () => {
     c2.fill('#000');           // Reset text color
     c2.fontStyle('normal');    // Reset font style
     layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(false);
+});
+
+c2.on('click', () => {
+    window.location = 'my-computers-hands.html'
 });
 
 
@@ -202,12 +224,23 @@ c3.on('mouseenter', () => {
     c3.fill('#555');          // Change text color on hover
     c3.fontStyle('bold');      // Make text bold on hover
     layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(true);
+    toggleLine('eyes', 'hide');  // Shows line1
+    toggleLine('hands', 'hide');  // Shows line1
+    toggleLine('mouth', 'show');  // Shows line1
+    toggleLine('skin', 'hide');  // Shows line5
+    toggleLine('roots', 'hide');  // Shows line5
 });
 
 c3.on('mouseleave', () => {
     c3.fill('#000');           // Reset text color
     c3.fontStyle('normal');    // Reset font style
     layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(false);
+});
+
+c3.on('click', () => {
+    window.location = 'my-computers-mouth.html'
 });
 
 
@@ -230,12 +263,23 @@ c4.on('mouseenter', () => {
     c4.fill('#555');          // Change text color on hover
     c4.fontStyle('bold');      // Make text bold on hover
     layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(true);
+    toggleLine('eyes', 'hide');  // Shows line1
+    toggleLine('hands', 'hide');  // Shows line1
+    toggleLine('mouth', 'hide');  // Shows line1
+    toggleLine('skin', 'show');  // Shows line5
+    toggleLine('roots', 'hide');  // Shows line5
 });
 
 c4.on('mouseleave', () => {
     c4.fill('#000');           // Reset text color
     c4.fontStyle('normal');    // Reset font style
     layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(false);
+});
+
+c4.on('click', () => {
+    window.location = 'my-computers-skin.html'
 });
 
 
@@ -258,12 +302,23 @@ c5.on('mouseenter', () => {
     c5.fill('#555');          // Change text color on hover
     c5.fontStyle('bold');      // Make text bold on hover
     layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(true);
+    toggleLine('eyes', 'hide');  // Shows line1
+    toggleLine('hands', 'hide');  // Shows line1
+    toggleLine('mouth', 'hide');  // Shows line1
+    toggleLine('skin', 'hide');  // Shows line5
+    toggleLine('roots', 'show');  // Shows line5
 });
 
 c5.on('mouseleave', () => {
     c5.fill('#000');           // Reset text color
     c5.fontStyle('normal');    // Reset font style
     layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(false);
+});
+
+c5.on('click', () => {
+    window.location = 'my-computers-roots.html'
 });
 
 
@@ -286,12 +341,23 @@ c6.on('mouseenter', () => {
     c6.fill('#555');          // Change text color on hover
     c6.fontStyle('bold');      // Make text bold on hover
     layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(true);
+    toggleLine('eyes', 'hide');  // Shows line1
+    toggleLine('hands', 'hide');  // Shows line1
+    toggleLine('mouth', 'hide');  // Shows line1
+    toggleLine('skin', 'hide');  // Shows line5
+    toggleLine('roots', 'hide');  // Shows line5
 });
 
 c6.on('mouseleave', () => {
     c6.fill('#000');           // Reset text color
     c6.fontStyle('normal');    // Reset font style
     layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(false);
+});
+
+c6.on('click', () => {
+    window.location = 'biliography.html'
 });
 
 // TABLE OF CONTENTS BUTTONS ------------------
@@ -319,6 +385,22 @@ var games_t = new Konva.Text({
 rectangleGroup.add(games_t);
 rectangleGroup.add(games);
 
+games.on('mouseenter', () => {
+    games_t.fontStyle('bold');      // Make text bold on hover
+    layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(true);
+});
+
+games.on('mouseleave', () => {
+    games_t.fontStyle('normal');    // Reset font style
+    layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(false);
+});
+
+games.on('click', () => {
+    window.location = 'games.html'
+});
+
 let gadgets = new Konva.Rect({
     width: 100,
     height: 25,
@@ -338,8 +420,24 @@ var gadgets_t = new Konva.Text({
     x: 30,
     y: 197
 });
-rectangleGroup.add(gadgets);
 rectangleGroup.add(gadgets_t);
+rectangleGroup.add(gadgets);
+
+gadgets.on('mouseenter', () => {
+    gadgets_t.fontStyle('bold');      // Make text bold on hover
+    layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(true);
+});
+
+gadgets.on('mouseleave', () => {
+    gadgets_t.fontStyle('normal');    // Reset font style
+    layer.batchDraw();           // Redraw layer to apply changes
+    toggleCursorText(false);
+});
+
+gadgets.on('click', () => {
+    window.location = 'gadgets.html'
+});
 
 
 //AUDIO BUTTON -----------------
@@ -363,8 +461,8 @@ audioIcon.onload = function () {
         if (frame) {yoda.rotation((yoda.rotation() + 3) % 360);}
     }, layer);
 
-    yoda.on('mouseenter', () => {rotationAnimation.start();});
-    yoda.on('mouseleave', () => {rotationAnimation.stop();});
+    yoda.on('mouseenter', () => {rotationAnimation.start();toggleCursorText(true);});
+    yoda.on('mouseleave', () => {rotationAnimation.stop();toggleCursorText(false);});
 };
 audioIcon.src = 'audio_icon.png';
 
@@ -375,18 +473,18 @@ audioIcon.src = 'audio_icon.png';
 
 const paths = {
   eyes: new Konva.Path({
-    x: 205,
+    x: 250,
     y: 85,
     data: 'M 0,9.75 L 97.84,9.75 L 97.84,0.25 L 159.45,0.25',  // Sample line data, modify as needed
     stroke: 'black',
     strokeWidth: 0.5,
     dash: [1, 2],
-    scaleX: 2,
+    scaleX: 1.5,
     scaleY: 1.7,
     visible: false,  // Start hidden
   }),
   hands: new Konva.Path({
-    x: 220,
+    x: 250,
     y: 117,
     data: 'M 0,0.25 L 64.7,0.25 L 64.7,105.25 L 91.33,105.25',
     stroke: 'black',
@@ -397,18 +495,18 @@ const paths = {
     visible: false,
   }),
   mouth: new Konva.Path({
-    x: 220,
+    x: 250,
     y: 115,
     data: 'M 0,9.25 L 107,9.25 L 107,0.25 L 127,0.25',
     stroke: 'black',
     strokeWidth: 0.3,
     dash: [1, 2],
-    scaleX: 2,
+    scaleX: 1.7,
     scaleY: 2.3,
     visible: false,
   }),
   skin: new Konva.Path({
-    x: 210,
+    x: 250,
     y: 153,
     data: 'M 0,0.25 L 101,0.25 L 101,35.75 L 126,35.75',
     stroke: 'black',
@@ -419,7 +517,7 @@ const paths = {
     visible: false,
   }),
   roots: new Konva.Path({
-    x: 220,
+    x: 250,
     y: 170,
     data: 'M 0,0.25 L 42,0.25 L 42,175.14',
     stroke: 'black',
@@ -477,15 +575,24 @@ eyes_path.on('mouseenter', () => {
     toggleLine('mouth', 'hide');  // Shows line1
     toggleLine('skin', 'hide');  // Shows line5
     toggleLine('roots', 'hide');  // Shows line5
+    toggleCursorText(true);
 
 });
 
 eyes_path.on('mouseleave', () => {
     // eyes_path.fill('green'); // Reset fill on mouse leave
     layer.batchDraw(); // Redraw layer
+    c1.align('left');
+    toggleCursorText(false);
 });
+
+eyes_path.on('click', () => {
+    window.location = 'my-computers-eyes.html'
+});
+
 layer.add(eyes_path);
 layer.batchDraw();
+
 
 // HAND 1 ------
 var hand1_path = new Konva.Path({
@@ -502,18 +609,27 @@ hand1_path.on('mouseenter', () => {
     hand1_path.moveToTop(); // Move path to top of stack
     // hand1_path.fill('#555'); // Change fill on hover
     layer.batchDraw(); // Redraw layer
+    c2.align('right');
 
     toggleLine('eyes', 'hide');  // Shows line1
     toggleLine('hands', 'show');  // Shows line1
     toggleLine('mouth', 'hide');  // Shows line1
     toggleLine('skin', 'hide');  // Shows line5
     toggleLine('roots', 'hide');  // Shows line5
+    toggleCursorText(true);
 });
 
 hand1_path.on('mouseleave', () => {
     // hand1_path.fill('green'); // Reset fill on mouse leave
     layer.batchDraw(); // Redraw layer
+    c2.align('left');
+    toggleCursorText(false);
 });
+
+hand1_path.on('click', () => {
+    window.location = 'my-computers-hands.html'
+});
+
 layer.add(hand1_path);
 layer.batchDraw();
 
@@ -531,18 +647,27 @@ var hand2_path = new Konva.Path({
 hand2_path.on('mouseenter', () => {
     hand2_path.moveToTop(); // Move path to top of stack
     // hand2_path.fill('#555'); // Change fill on hover
+    c2.align('right');
     layer.batchDraw(); // Redraw layer
     toggleLine('eyes', 'hide');  // Shows line1
     toggleLine('hands', 'show');  // Shows line1
     toggleLine('mouth', 'hide');  // Shows line1
     toggleLine('skin', 'hide');  // Shows line5
     toggleLine('roots', 'hide');  // Shows line5
+    toggleCursorText(true);
 });
 
 hand2_path.on('mouseleave', () => {
     // hand2_path.fill('green'); // Reset fill on mouse leave
     layer.batchDraw(); // Redraw layer
+    c2.align('left');
+    toggleCursorText(false);
 });
+
+hand2_path.on('click', () => {
+    window.location = 'my-computers-hands.html'
+});
+
 layer.add(hand2_path);
 layer.batchDraw();
 
@@ -561,18 +686,27 @@ var mouth_path = new Konva.Path({
 mouth_path.on('mouseenter', () => {
     mouth_path.moveToTop(); // Move path to top of stack
     // mouth_path.fill('#555'); // Change fill on hover
+    c3.align('right');
     layer.batchDraw(); // Redraw layer
     toggleLine('eyes', 'hide');  // Shows line1
     toggleLine('hands', 'hide');  // Shows line1
     toggleLine('mouth', 'show');  // Shows line1
     toggleLine('skin', 'hide');  // Shows line5
     toggleLine('roots', 'hide');  // Shows line5
+    toggleCursorText(true);
 });
 
 mouth_path.on('mouseleave', () => {
     // mouth_path.fill('green'); // Reset fill on mouse leave
     layer.batchDraw(); // Redraw layer
+    c3.align('left');
+    toggleCursorText(false);
 });
+
+mouth_path.on('click', () => {
+    window.location = 'my-computers-mouth.html'
+});
+
 layer.add(mouth_path);
 layer.batchDraw();
 
@@ -591,18 +725,27 @@ var skin_path = new Konva.Path({
 skin_path.on('mouseenter', () => {
     skin_path.moveToTop(); // Move path to top of stack
     // skin_path.fill('#555'); // Change fill on hover
+    c4.align('right');
     layer.batchDraw(); // Redraw layer
     toggleLine('eyes', 'hide');  // Shows line1
     toggleLine('hands', 'hide');  // Shows line1
     toggleLine('mouth', 'hide');  // Shows line1
     toggleLine('skin', 'show');  // Shows line5
     toggleLine('roots', 'hide');  // Shows line5
+    toggleCursorText(true);
 });
 
 skin_path.on('mouseleave', () => {
     // skin_path.fill('green'); // Reset fill on mouse leave
+    c4.align('left');
     layer.batchDraw(); // Redraw layer
+    toggleCursorText(false);
 });
+
+skin_path.on('click', () => {
+    window.location = 'my-computers-skin.html'
+});
+
 layer.add(skin_path);
 layer.batchDraw();
 
@@ -621,20 +764,30 @@ var roots_path = new Konva.Path({
 roots_path.on('mouseenter', () => {
     roots_path.moveToTop(); // Move path to top of stack
     // roots_path.fill('#555'); // Change fill on hover
+    c5.align('right');
     layer.batchDraw(); // Redraw layer
     toggleLine('eyes', 'hide');  // Shows line1
     toggleLine('hands', 'hide');  // Shows line1
     toggleLine('mouth', 'hide');  // Shows line1
     toggleLine('skin', 'hide');  // Shows line5
     toggleLine('roots', 'show');  // Shows line5
+    toggleCursorText(true);
 });
 
 roots_path.on('mouseleave', () => {
     // roots_path.fill('green'); // Reset fill on mouse leave
     layer.batchDraw(); // Redraw layer
+    c5.align('left');
+    toggleCursorText(false);
 });
+
+roots_path.on('click', () => {
+    window.location = 'my-computers-roots.html'
+});
+
 layer.add(roots_path);
 layer.batchDraw();
+
 
 // ADD IT ALL
 layer.add(rectangleGroup);
