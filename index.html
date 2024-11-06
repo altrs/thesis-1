@@ -14,12 +14,10 @@
 
 		<div class="table_of_contents">
 
-		    <section>
-		    	<canvas class="human-img"></canvas>
-			</section>
+		    <div class="konva"></div>
 
 			<div class="abstract">
-				<p><b>ABSTRACT</b></p>
+				<p class="animated-text2"><b>ABSTRACT</b></p>
 				<p>MY COMPUTER TOLD ME SO is an investigation of de-shaming spaces through a interactive web publication and physical gadgets. The aim of the piece is to engage viewers through game-like experiences, and demonstrate a digital realm that supports its users, rather than exploits them.</p>
 			</div>
 
@@ -30,6 +28,39 @@
 
 	<div class="cursor"></div>
 	<script src="script.js"/></script>
+	<script>
+
+		// CURSOR EFFECT
+		const cursor = document.querySelector('.cursor');
+
+		document.addEventListener('mousemove', (e) => {
+		    cursor.style.left = `${e.pageX}px`;
+		    cursor.style.top = `${e.pageY}px`;
+		});
+
+		//TITLE ANIMATION
+		document.addEventListener("DOMContentLoaded", () => {
+		    const textElement = document.querySelector(".animated-text");
+		    const text = textElement.textContent;
+		    textElement.innerHTML = "";
+
+		    [...text].forEach(char => {
+		        const span = document.createElement("span");
+		        span.textContent = char === " " ? "\u00A0" : char; 
+		        textElement.appendChild(span);
+		    });
+
+		    function animateText() {
+		        textElement.querySelectorAll("span").forEach((span, index) => {
+		            setTimeout(() => {
+		                span.classList.add("be-bold");
+		                setTimeout(() => {span.classList.remove("be-bold");}, 500);
+		            }, index * 50);
+		        });
+		    }
+		    setInterval(animateText, 2000);
+		});
+	</script>
 
 </body>
 </html>

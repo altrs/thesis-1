@@ -3,14 +3,10 @@
 
 body {
       cursor: none;
-      font-family: Arial, sans-serif;
+      font-family: Arial Light, sans-serif;
       background: url('background.png');
 }
 
-/*h1{
-      font-weight: 100;
-}
-*/
 @keyframes pulse {
       0%, 100% {transform: translate(-50%, -50%) scale(1);}
       50% {transform: translate(-50%, -50%) scale(1.5);}
@@ -42,38 +38,26 @@ body {
       text-align: center;
 }
 
-/*@keyframes boldLetter {
-    0%, 100% {font-weight: 100;}
-    50% {font-weight: bold;}
-}
-
-.animation span {
-    display: inline-block;
-    transition: font-weight 0.5s ease;
-    font-style: italic;
-}*/
-
-
 h1 {
     font-family: "Roboto", sans-serif;
     font-stretch: expanded;
     font-size: 2rem;
     text-transform: uppercase;
-    white-space: nowrap; /* Prevent line breaks */
+    white-space: nowrap;
+    margin-top: 30px;
 }
 
 h1 span {
     display: inline-block;
-    position: relative; /* This prevents affecting the layout of surrounding elements */
+    position: relative;
     transition: font-weight 0.4s cubic-bezier(0.25, 1.5, 0.5, 1), font-size 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
     font-weight: 100;
-    font-size: 1em; /* Regular size */
-    font-style: italic; /* Italics */
+    font-size: 1em;
+    font-style: italic;
 }
 
 h1 span.be-bold {
     font-weight: 900;
-/*    font-size: 1.1em; /* Slightly larger size for emphasis */*/
 }
 
 .table_of_contents{
@@ -88,15 +72,27 @@ h1 span.be-bold {
       height: 100%;
 }
 
-.abstract{
-      width: 250px;
-      height: 230px;
-      border: 1px solid;
-      padding: 10px;
-      text-align: left;
-      margin: 13% 0% 0% 1%;
+.abstract {
+    width: 250px;
+    height: 230px;
+    border: 1px solid;
+    padding: 10px;
+    text-align: left;
+    margin: 13% 0% 0% 1%;
+    overflow: hidden; /* Ensures text doesn't go outside div */
 }
 
+.animated-text2 {
+    display: inline-block; /* Required to animate position */
+    animation: sideToSide 7s infinite alternate;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+@keyframes sideToSide {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(150px);}
+}
 
 
 
