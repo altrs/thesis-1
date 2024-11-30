@@ -1,27 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Thesis Proof</title>
-	<script src="https://unpkg.com/konva@9/konva.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thesis Proof</title>
+  <style>
+
+  	@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+  	@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+	
+  	nav {
+		position: fixed;
+		top: 0px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 99.9%;
+		height: 70px;
+		background: white;
+		border: 1px dashed black;
+		z-index: 999;
+		display: flex;
+		font-family: "Abel", sans-serif;
+	}
+
+	.animation-container {
+	  position: relative;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  width: 100%;
+	  height: 100vh; /* Fixed height for the animation section */
+	  overflow: hidden; /* Ensures animations stay within bounds */
+	  background-color: #ffffff; /* Optional background for clarity */
+	  margin-bottom: 20px; /* Spacing between this section and other content */
+	}
+
+	.animation-container img {
+	  position: absolute;
+	  width: 400px;
+	  height: 400px;
+	  animation-duration: 2s;
+	  animation-timing-function: ease-out;
+	  animation-fill-mode: forwards;
+	}
+
+	#left-image {
+	  left: -500px; /* Start far offscreen to the left */
+	  animation-name: slideInLeft;
+	}
+
+	#right-image {
+	  right: -500px; /* Start far offscreen to the right */
+	  animation-name: slideInRight;
+	}
+
+	@keyframes slideInLeft {
+	  0% {
+	    left: -800px;
+	  }
+	  100% {
+	    left: calc(65% - 100px); /* Moves to the center */
+	  }
+	}
+
+	@keyframes slideInRight {
+	  0% {
+	    right: -800px;
+	  }
+	  100% {
+	    right: calc(65% - 100px); /* Moves to the center */
+	  }
+	}
+
+	.animation-container #text {
+	  position: absolute;
+	  color: black;
+	  font-size: 24px;
+	  width: 330px;
+	  text-align: center;
+	  opacity: 0;
+	  font-family: 'Aldrich';
+	  font-size: 45px;
+	  animation: fadeIn 1s ease-in 2s forwards;
+	}
+
+	@keyframes fadeIn {
+	  0% {
+	    opacity: 0;
+	  }
+	  100% {
+	    opacity: 1;
+	  }
+	}
+
+	.not-title{
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-family: 'Arial';
+	}
+
+	.note{
+		width: 55%;
+	}
+
+	.side-by-side{
+		width: 60%;
+		height: 500px;
+		display: flex;
+		margin-top: 80px;
+	}
+
+	.side-by-side div{
+		width: 50%;
+		text-align: left;
+		padding: 15px;
+	}
+
+
+  </style>
 </head>
 <body>
+	<nav>
+	  <a href="index.html"><img style="height: 90%;" src="tempimg/icon.png"/></a>
+	  <h1>MY COMPUTER TOLD ME SO</h1>
+	</nav>
 
-	<div class="container">
-		<div><p>
-			<b>WRITING OUTLINE:</b><br><br>
-			Topic: Robots<br>
-			Where is the shame within the topic?:  The shame both appears and doesn't appear within the decision making during the creation of Robots and how we aim to tailor our experiences with them through UI/UX.<br>
-			How does it lead to control?: When we cannot control ourselves or the people around us, we attempt to make something we can control. It continues to feed the idea that we can control 'humans' as we create them to be whatever we want a the click of a button. It gives us an outlet to exert control humans.
-		</p></div>
-		<div><p>
-			<b>MAIN GAME INTERATION:</b><br><br>
-			Creator's hands POV. You adjust the creator character in order to adjust the creator's output. Puzzle like objective / 'Achievements' that pushes players to get the creator to create all vastly different types of outputs.
-		</p></div>
-		<div><p>
-			<b>TAKEAWAY:</b><br><br>
-			Thinking about technologies of built trust and respect. Draw from the article, <a href="https://www.pdcnet.org/8525763B0050E6F8/file/EC697FDA12D4EE86852588600043646C/$FILE/techne_2022_0026_0001_0003_0032.pdf">"What does it mean for a robot to be respectful?."</a> Also thinking about animitism and aniatism practices / viewpoints.
-		</p></div>
-	</div>
+<div class="animation-container">
+  <img id="left-image" src="tempimg/hands/hand2.png" alt="Left Image">
+  <img id="right-image" src="tempimg/hands/hand1.png" alt="Right Image">
+  <div id="text">
+    <p>MACHINES AND ROBOTS</p>
+  </div>
+</div>
+
+</div>
+
+<div class="not-title">
+  <p class='note'><b>QUICK NOTE (TO SELF)</b><br><br>What this page means when it refers to machines: Machines are the technologies that surround us, spanning from high-tech AI, to low tech toilets, and the systems that birth and nurture these objects.</p>
+  <img id="devices" src="tempimg/hands/device1.png"/>
+
+  <div class="side-by-side">
+  	<div class="left"><p>It’s important to note that whichever shame-category a technology may fall under, “...choices [of the creator] tend to become strongly fixed in material equipment, economic investment, and social habits. [...] For that reason the same careful attention one would give to the rules, roles, and relationships of politics must also be given to such things as [...] the tailoring of seemingly insignificant features on new machines”</p></div>
+  	<div class="right">
+  		<img src="tempimg/hands/video.png"/>
+  	</div>
+  </div>
+
+  	<img src="tempimg/hands/game.png"/>
+  	<p style="margin: 10px 220px 100px 220px;">Creator's hands POV. You adjust the creator character in order to adjust the creator's output. Puzzle like objective / 'Achievements' that pushes players to get the creator to create all vastly different types of outputs. Connection/abstract word game type thing within the hands.</p>
+
+  	<img src="tempimg/hands/game2.png"/>
+  	<p style="margin: 10px 200px 100px 200px;">Achievement list from the game, showing all the various types of shame that can be infused into our technologies and robots</p>
+
+  	<div class="side-by-side">
+  	<div class="left"><img src="tempimg/hands/book.png"/></div>
+  	<div class="right" style="display: flex; justify-content: center; align-items: center;">
+  		<p>“Technology” and “hi tech” are not synonymous, and a technology that isn’t “hi,” isn’t necessarily “low” in any meaningful sense. [...] <br><br>
+
+	We have been so desensitized by a hundred and fifty years of ceaselessly expanding technical prowess that we think nothing less complex and showy than a computer or a jet bomber deserves to be called "technology " at all. As if linen were the same thing as flax — as if paper, ink, wheels, knives, clocks, chairs, aspirin pills, were natural objects, born with us like our teeth and fingers – as if steel saucepans with copper bottoms and fleece vests spun from recycled glass grew on trees, and we just picked them when they were ripe…”</p>
+  	</div>
+  </div>
+
+
+  <img src="tempimg/hands/conclusion.png" style="margin: 230px 200px 10px 200px;"/>
+  <p style="width: 60%;">Interactive diagram of a cyborg. Hover over different parts of the body and it will reveals aspects of the conclusion (HUMAN HAND CURSOR, TOUCHING ROBOT BODY) </p>
+
+</div>
+
 
 </body>
 </html>
+

@@ -285,41 +285,41 @@ c4.on('click', () => {
 
 //C5 ---------------
 
-var c5 = new Konva.Text({
-    text: 'V. MY COMPUTER’S ROOTS',
-    fontSize: 13,
-    fontFamily: 'Arial',
-    fill: '#000',
-    width: 210,
-    padding: 5,
-    align: 'left',
-    x: 10,
-    y: 115
-});
-rectangleGroup.add(c5);
+// var c5 = new Konva.Text({
+//     text: 'V. MY COMPUTER’S ROOTS',
+//     fontSize: 13,
+//     fontFamily: 'Arial',
+//     fill: '#000',
+//     width: 210,
+//     padding: 5,
+//     align: 'left',
+//     x: 10,
+//     y: 115
+// });
+// rectangleGroup.add(c5);
 
-c5.on('mouseenter', () => {
-    c5.fill('#555');          // Change text color on hover
-    c5.fontStyle('bold');      // Make text bold on hover
-    layer.batchDraw();           // Redraw layer to apply changes
-    toggleCursorText(true);
-    toggleLine('eyes', 'hide');  // Shows line1
-    toggleLine('hands', 'hide');  // Shows line1
-    toggleLine('mouth', 'hide');  // Shows line1
-    toggleLine('skin', 'hide');  // Shows line5
-    toggleLine('roots', 'show');  // Shows line5
-});
+// c5.on('mouseenter', () => {
+//     c5.fill('#555');          // Change text color on hover
+//     c5.fontStyle('bold');      // Make text bold on hover
+//     layer.batchDraw();           // Redraw layer to apply changes
+//     toggleCursorText(true);
+//     toggleLine('eyes', 'hide');  // Shows line1
+//     toggleLine('hands', 'hide');  // Shows line1
+//     toggleLine('mouth', 'hide');  // Shows line1
+//     toggleLine('skin', 'hide');  // Shows line5
+//     toggleLine('roots', 'show');  // Shows line5
+// });
 
-c5.on('mouseleave', () => {
-    c5.fill('#000');           // Reset text color
-    c5.fontStyle('normal');    // Reset font style
-    layer.batchDraw();           // Redraw layer to apply changes
-    toggleCursorText(false);
-});
+// c5.on('mouseleave', () => {
+//     c5.fill('#000');           // Reset text color
+//     c5.fontStyle('normal');    // Reset font style
+//     layer.batchDraw();           // Redraw layer to apply changes
+//     toggleCursorText(false);
+// });
 
-c5.on('click', () => {
-    window.location = 'my-computers-roots.html'
-});
+// c5.on('click', () => {
+//     window.location = 'my-computers-roots.html'
+// });
 
 
 //C6 ---------------

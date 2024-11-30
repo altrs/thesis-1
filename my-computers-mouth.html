@@ -2,26 +2,146 @@
 <html lang="en">
 <head>
 	<title>Thesis Proof</title>
-	<script src="https://unpkg.com/konva@9/konva.min.js"></script>
+	<style>
+
+		@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+  	@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+		body{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+
+		}
+
+		nav {
+			position: fixed;
+			top: 0px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 99.9%;
+			height: 70px;
+			background: white;
+			border: 1px dashed black;
+			z-index: 999;
+			display: flex;
+			font-family: "Abel", sans-serif;
+		}
+
+		.title{
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+		}
+
+		.titleimg{
+			width: 650px;
+			height: 500px;
+		}
+
+		.subtitle{
+			position: absolute;
+			width: 500px;
+			background: rgba(255, 255, 255, 0.8);
+			border: 1px solid;
+			right: 300px;
+			bottom: 150px;
+			padding: 20px;
+		}
+
+
+		.distorted-text-container {
+  width: 35%;
+  margin: 50px auto;
+  text-align: left;
+  font-size: 24px;
+  line-height: 1.5;
+  color: black;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+
+.distorted-text span {
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+
+
+	</style>
 </head>
 <body>
 
-	<div class="container">
-		<div><p>
-			<b>WRITING OUTLINE:</b><br><br>
-			Topic: The hubris language surrounding technology<br>
-			Where is the shame within the topic?:  In this case, the shame is absent from the speech in technology launches and promotion<br>
-			How does it lead to control?: In this case, the shameless language being used practically declares authority off little basis. Shamelessness encourages/is tied to manipulation in this instance.
-		</p></div>
-		<div><p>
-			<b>MAIN GAME INTERATION:</b><br><br>
-			This game takes place within a tech launch presentation. You can change the presentation slides which in turn affects the speaker, either adding to the shamelessness, or adding humility to the speech. A 'sabotage simulation.'
-		</p></div>
-		<div><p>
-			<b>TAKEAWAY:</b><br><br>
-			Examine what various authors such as Zuboff have said about the ways in which language has been used for manipulation tactics by big tech. And also address content moderation, and censorship conundrums within this section.
-		</p></div>
+	<nav>
+	  <a href="index.html"><img style="height: 90%;" src="tempimg/icon.png"/></a>
+	  <h1>MY COMPUTER TOLD ME SO</h1>
+	</nav>
+
+	<div class="title">
+		<img class="titleimg" src="tempimg/mouth/title.png"/>
+		<div class="subtitle"><p style="margin: 0;">(Enticing Blurb)Here, shame is absent from tech launch speeches. Idealistic tech launches and the language they choose to use result in a manipulative relationship between company and consumer. And further, the shameless language being used practically declares authority of technology companies off little basis, resulting in more opportunity for manipulation of the public.</p></div>
 	</div>
+
+	<h3 style="margin-bottom: 0px;">Behavioral Value Reinvestment Cycle Disruption</h3>
+	<p style="margin-top: 5px; margin-bottom: 20px;">Technology consumer-company relationships are highly imbalanced</p>
+	<img src="tempimg/mouth/diagram.png"/>
+
+	<img style="margin: 150px 0 100px 0; width: 60%;" src="tempimg/mouth/game.png"/>
+
+	<img style="margin: 100px 0 100px 0; width: 60%;" src="tempimg/mouth/cycle.png"/>
+
+
+<div class="distorted-text-container">
+  <p class="distorted-text">
+    (THIS TEXT CAN BE MANIPULATED WITH MOUSE MOVEMENT) Shame is absent from tech launch speeches. Idealistic tech launches and the language they choose to use result in a manipulative relationship between company and consumer. The shameless language being used practically declares authority of technology companies off little basis, resulting in more opportunity for manipulation of the public. Shamelessness encourages/is tied to manipulation in this instance.
+  </p>
+</div>
+
+
+<script>
+	
+const textContainer = document.querySelector(".distorted-text");
+const text = textContainer.textContent;
+textContainer.textContent = ""; // Clear the original text
+
+// Wrap each character in a <span> tag
+text.split("").forEach((char) => {
+  const span = document.createElement("span");
+  span.textContent = char === " " ? "\u00A0" : char; // Handle spaces
+  textContainer.appendChild(span);
+});
+
+// Add hover effect to each <span>
+textContainer.addEventListener("mousemove", (event) => {
+  const spans = textContainer.querySelectorAll("span");
+  spans.forEach((span) => {
+    const randomX = Math.random() * 10 - 5; // Random X displacement
+    const randomY = Math.random() * 10 - 5; // Random Y displacement
+    const randomHue = Math.floor(Math.random() * 130); // Random color hue
+
+    span.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    span.style.color = `hsl(${randomHue}, 70%, 50%)`;
+  });
+});
+
+// Reset the transform when the mouse leaves
+textContainer.addEventListener("mouseleave", () => {
+  const spans = textContainer.querySelectorAll("span");
+  spans.forEach((span) => {
+    span.style.transform = `translate(0, 0)`;
+    span.style.color = ""; // Reset color
+  });
+});
+
+
+
+</script>
 
 </body>
 </html>
