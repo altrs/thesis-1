@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashed Lines with Scroll Threshold</title>
+  <title>Thesis Proof</title>
   <style>
   	@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
@@ -15,7 +15,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      pointer-events: none; /* Allow interaction with other content */
+      pointer-events: none;
     }
 
     .content{
@@ -42,7 +42,7 @@
 
 	.middle{
 		display: flex;
-		flex-direction: column; /* Stack images and text vertically */
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
@@ -66,27 +66,27 @@
 	  left: 0;
 	  width: 100%;
 	  height: 100%;
-	  pointer-events: none; /* Ensure the images don't block text interaction */
+	  pointer-events: none;
 	}
 
 	.hover-image {
 	  position: absolute;
-	  width: 50px; /* Adjust size as needed */
+	  width: 50px;
 	  height: 50px;
 	  z-index: 100;
-	  pointer-events: auto; /* Allow images to interact with hover events */
-	  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth movement and fade-out */
+	  pointer-events: auto;
+	  transition: transform 0.3s ease, opacity 0.3s ease;
 	  rotate: 180deg;
 	}
 
 	p {
-	  position: relative; /* Ensure text is behind the floating images */
+	  position: relative;
 	  z-index: 1;
 	}
 
 	.imgmiddle{
 		display: flex;
-		flex-direction: column; /* Stack images and text vertically */
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
@@ -171,6 +171,23 @@
 
 	.conclusion{
 		position: absolute;
+		width: 700px;
+		text-align: center;
+	}
+
+	#popup{
+		display: none;
+		width: 400px;
+		height: 140px;
+		border: 1px solid;
+		border-radius: 50px;
+		background: white;
+		z-index: 100;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 20px;
+		position: absolute;
 	}
 
 
@@ -190,7 +207,6 @@
 
   <div class="middle">
   	<div class="image-container">
-	    <!-- Add small images -->
 	    <img src="tempimg/eyes/cover1.png" alt="Image 1" class="hover-image">
 	    <img src="tempimg/eyes/cover1.png" alt="Image 2" class="hover-image">
 	    <img src="tempimg/eyes/cover1.png" alt="Image 3" class="hover-image">
@@ -215,9 +231,8 @@
 	    <img src="tempimg/eyes/cover2.png" alt="Image 1" class="hover-image">
 	    <img src="tempimg/eyes/cover2.png" alt="Image 2" class="hover-image">
 	    <img src="tempimg/eyes/cover2.png" alt="Image 3" class="hover-image">
-	    <!-- Add more images as needed -->
 	  </div>
-  	<p class="middletext">It comes to no surprise to most that shame is an integral part within social media. Author ___ goes as far to say technology is a big shame machine. <br><br>  Some have stated that the shame felt on social media platforms is a type of dis integrative shame. <br><br>  And further, memory is selective. And digital attacks cause real, physical pain.</p>
+  	<p class="middletext"> (Supporting information and research) <br><br>It comes to no surprise to most that shame is an integral part within social media. Author Cathy O'Neil goes as far to say technology is a big shame machine. <br><br>  Some have stated that the shame felt on social media platforms is a type of disintegrative shame.one might draw connections between the internet’s memory capacity and being aware of one’s own limitations in the presence of a seemingly omnipotent digital entity. Ubel states, “it was Nietzsche (1966b), whose parable of the Ugliest Man in Thus Spoke Zarathustra Tillich references, who averred that the very notion of an all-seeing God contributes to the production of shame.” While it’s a bold statement to claim that digital memory could be compared to an all-seeing G-d, the effects of having media uploaded online, whether it be pictures, videos, text, audio, etc. creates a relationship between user and device where the user loses a major amount of agency and control. All the while also increasing feelings of being observed and scrutinized. The elusivity of expressing/exposing yourself and your identity through media and not knowing how it’s being used, viewed, or perceived can cause tantamount uncertainty and shame. <br><br>  And further, memory is selective. And digital attacks cause real, physical pain. As Sheila Brown, author of The Criminology of Hybrids: Rethinking Crime and Law in Technosocial Networks, states, “ . . . endlessly circulating, shifting, pixels affect real lives . . . real humiliations and human pains are generated; and real relations of (patriarchal) power and exploitation are reproduced and reinforced.”</p>
   </div>
 
 
@@ -230,12 +245,14 @@
   	<button>PLAY!</button>
   </div>
 
-  <div class="imgmiddle" style="margin-top: 200px;">
+  <div class="imgmiddle" id="phone" style="margin-top: 200px;">
   	<img style="width: 70%; margin: 0;" src="tempimg/eyes/phone.png"/>
   </div>
 
+  <div id="popup">This phone will have a social media scroll that traverses the various research done so far, incorprating easy-to-read excerpts and summaries of concepts regarding social media and shame -- ideally, it will be easy to read because it will be relatable to some degree. Further, the sides will have 'popup ads' that also have more supporting information and media pertaining to this topic.</div>
+
 <div class="outline">
-	<div class="conclusion">CONCLUSION</div>
+	<div class="conclusion">Conclusion<br>With all this in mind, while the internet has a seemingly limitless capacity to store information, it can be seen that storage (just like human memory) is not a passive thing, as “what is remembered individually and collectively depends in part on technologies of memory and the associated socio-technical practices, which are changing radically.” Storage is a “constant negotiation of determining value and worth of information and archiving and forgetting that which might be important but not needed.” As our technologies become increasingly more obfuscated about how they handle data storage and circulation, the digital world becomes a breeding ground for uncertainty, distrust and judgment. </div>
 	<div id="image-outline">
 	  <!-- Images for top -->
 	  <img src="tempimg/eyes/cover2.png" class="lottery-image top" alt="Image">
@@ -271,27 +288,43 @@
 
 
   <script>
-  	const canvas = document.getElementById('canvas');
+
+  	let popup = document.getElementById("popup");
+  	let phone = document.getElementById("phone");
+		phone.addEventListener("mouseover", (event) => {
+		    popup.style.display = "flex"; // Make the popup visible
+		});
+
+		phone.addEventListener("mousemove", (event) => {
+		    // Update popup position to follow the mouse
+		    popup.style.left = `${event.pageX + 10}px`;
+		    popup.style.top = `${event.pageY + 10}px`;
+		});
+
+		phone.addEventListener("mouseout", () => {
+		    popup.style.display = "none"; // Hide the popup
+		});
+
+
+
+  const canvas = document.getElementById('canvas');
 	const ctx = canvas.getContext('2d');
-	const scrollThreshold = 150; // Threshold in pixels
+	const scrollThreshold = 150;
 	let drawEnabled = true;
-	const circleRadius = 100; // Radius for the 100px circle
+	const circleRadius = 100;
 	let mouseX = 0;
 	let mouseY = 0;
 
-	// Adjust canvas size
 	function resizeCanvas() {
 	  canvas.width = window.innerWidth;
 	  canvas.height = window.innerHeight;
 	}
 
-	// Initial resize
 	resizeCanvas();
 
-	// Handle resizing
 	window.addEventListener('resize', () => {
 	  resizeCanvas();
-	  drawBackground(); // Redraw the background when resizing
+	  drawBackground();
 	});
 
 	const backgroundImage = new Image();
@@ -307,20 +340,18 @@
 	  }
 	}
 
-	let animationStartX = canvas.width; // Start offscreen to the right
-	const animationEndX = (canvas.width - 450) / 2 + 325; // Centered horizontally in the square
-	const animationSpeed = 5; // Adjust speed to make it smooth
-	let animationInProgress = true; // Track if the animation is ongoing
+	let animationStartX = canvas.width;
+	const animationEndX = (canvas.width - 450) / 2 + 325;
+	const animationSpeed = 5;
+	let animationInProgress = true;
 
 	function draw() {
-	  // Redraw the background every time
 	  drawBackground();
 
 	  if (drawEnabled) {
-	    // Draw dashed lines
-	    const bottomY = window.innerHeight - 50; // Fixed bottom based on viewport
-	    const point1X = canvas.width / 2 - 50; // Left point at the bottom-middle
-	    const point2X = canvas.width / 2 + 50; // Right point at the bottom-middle
+	    const bottomY = window.innerHeight - 50;
+	    const point1X = canvas.width / 2 - 50;
+	    const point2X = canvas.width / 2 + 50;
 
 	    ctx.setLineDash([5, 5]);
 	    ctx.beginPath();
@@ -337,31 +368,28 @@
 	    ctx.stroke();
 	  }
 
-	  // Draw the blend circle
 	  ctx.globalCompositeOperation = 'overlay';
 	  ctx.beginPath();
 	  ctx.arc(mouseX, mouseY, circleRadius, 0, Math.PI * 2);
-	  ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'; // Semi-transparent white
+	  ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
 	  ctx.fill();
 	  ctx.lineWidth = 1;
 	  ctx.strokeStyle = 'black';
 	  ctx.stroke();
 
-	  // Restrict drawing to a 400px square
 	  ctx.globalCompositeOperation = 'source-over';
-	  const squareX = (canvas.width - 400) / 2; // Center the square horizontally
-	  const squareY = (canvas.height - 400) / 2; // Center the square vertically
+	  const squareX = (canvas.width - 400) / 2;
+	  const squareY = (canvas.height - 400) / 2;
 
 	  ctx.save();
 	  ctx.beginPath();
 	  ctx.rect(squareX, squareY, 700, 500);
 	  ctx.clip();
 
-	  // Draw word-wrapped text inside the square
 	  const text = '<Enticing Blurb> Social media uses shame as an attention grabber to increase profits, de-incentivizing platforms to properly and genuinely combat hostile behavior. Social media platforms enable the increase of shame within a victim, while decreasing the shame of the perpetrator. The very nature of data collecting, mining and sharing sets the stage for shame to occur, creating dissonance and possible insecurity within individual users concerned about public image.';
 	  const maxWidth = 380;
 	  const lineHeight = 30;
-	  let startX = animationStartX; // Use the animated position
+	  let startX = animationStartX;
 	  let startY = squareY + 50;
 
 	  ctx.font = '20px Arial';
@@ -388,32 +416,27 @@
 	  ctx.fillText(line.trim(), startX, startY);
 	  ctx.restore();
 
-	  // Handle animation
 	  if (animationInProgress) {
 	    if (animationStartX > animationEndX) {
-	      animationStartX -= animationSpeed; // Move text closer to the center
-	      requestAnimationFrame(draw); // Continue the animation
+	      animationStartX -= animationSpeed;
+	      requestAnimationFrame(draw);
 	    } else {
-	      animationStartX = animationEndX; // Stop exactly at the end
+	      animationStartX = animationEndX;
 	      animationInProgress = false;
 	    }
 	  }
 	}
 
-	// Trigger initial draw
 	draw();
 
-
-	// Track mouse movements
 	window.addEventListener('mousemove', (event) => {
 	  mouseX = event.clientX;
-	  mouseY = event.clientY + window.scrollY; // Account for scroll offset
-	  draw(); // Update the drawing on mouse move
+	  mouseY = event.clientY + window.scrollY;
+	  draw();
 	});
 
-	drawBackground(); // Draw the initial background
+	drawBackground();
 
-	// Toggle drawing based on scroll position
 	window.addEventListener('scroll', () => {
 	  const scrollTop = window.scrollY;
 	  if (scrollTop > scrollThreshold) {
@@ -421,24 +444,21 @@
 	  } else {
 	    drawEnabled = true;
 	  }
-	  draw(); // Redraw on scroll to update the state
+	  draw();
 	});
 
 
 	//	IMAGES MOVING
 
-	// Select all images
 	const hoverImages = document.querySelectorAll('.hover-image');
 
-	// Randomly position the images within the container
 	function randomizeImagePositions() {
 	  const centerX = window.innerWidth / 2;
 	  const centerY = window.innerHeight / 2;
-	  const boxWidth = 400; // Define the width of the center box
-	  const boxHeight = 300; // Define the height of the center box
+	  const boxWidth = 400;
+	  const boxHeight = 300;
 
 	  hoverImages.forEach((img) => {
-	    // Randomly position the images within the center box
 	    const randomX = centerX - boxWidth / 2 + Math.random() * boxWidth;
 	    const randomY = centerY - boxHeight / 2 + Math.random() * boxHeight;
 	    img.style.left = `${randomX}px`;
@@ -446,16 +466,14 @@
 	  });
 	}
 
-	// Call the function to position images initially
 	randomizeImagePositions();
 
-	// Add hover effect to move and fade images
 	hoverImages.forEach((img) => {
 	  img.addEventListener('mouseenter', () => {
 	    img.style.transform = `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px)`;
 	    setTimeout(() => {
-	      img.style.opacity = '1'; // Restore visibility after some time
-	    }, 500); // Adjust timing as needed
+	      img.style.opacity = '1';
+	    }, 500);
 	  });
 	});
 
@@ -467,20 +485,13 @@
 	  let currentIndex = 0;
 
 	  function glowNextImage() {
-	    // Reset all images to normal state
 	    images.forEach((img) => img.classList.remove('glow'));
-
-	    // Highlight the current image
 	    images[currentIndex].classList.add('glow');
-
-	    // Move to the next image
 	    currentIndex = (currentIndex + 1) % images.length;
-
-	    // Repeat the glow effect
-	    setTimeout(glowNextImage, 500); // Change delay for speed
+	    setTimeout(glowNextImage, 500);
 	  }
 
-	  glowNextImage(); // Start the glowing sequence
+	  glowNextImage();
 	});
 
 

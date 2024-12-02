@@ -72,6 +72,21 @@
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
+	#popup{
+		display: none;
+		width: 200px;
+		height: 140px;
+		border: 1px solid;
+		border-radius: 50px;
+		background: white;
+		z-index: 100;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 20px;
+		position: absolute;
+	}
+
 
 
 	</style>
@@ -84,9 +99,11 @@
 	</nav>
 
 	<div class="title">
-		<img class="titleimg" src="tempimg/mouth/title.png"/>
+		<img class="titleimg" id="title" src="tempimg/mouth/title.png"/>
 		<div class="subtitle"><p style="margin: 0;">(Enticing Blurb)Here, shame is absent from tech launch speeches. Idealistic tech launches and the language they choose to use result in a manipulative relationship between company and consumer. And further, the shameless language being used practically declares authority of technology companies off little basis, resulting in more opportunity for manipulation of the public.</p></div>
 	</div>
+
+	 <div id="popup">When clicked, these mouths with be deepfaked to move and audio will play. The mouths will say quotes from tech developers from tech launches/promotions</div>
 
 	<h3 style="margin-bottom: 0px;">Behavioral Value Reinvestment Cycle Disruption</h3>
 	<p style="margin-top: 5px; margin-bottom: 20px;">Technology consumer-company relationships are highly imbalanced</p>
@@ -105,6 +122,22 @@
 
 
 <script>
+
+	let popup = document.getElementById("popup");
+  	let title = document.getElementById("title");
+		title.addEventListener("mouseover", (event) => {
+		    popup.style.display = "flex"; // Make the popup visible
+		});
+
+		title.addEventListener("mousemove", (event) => {
+		    // Update popup position to follow the mouse
+		    popup.style.left = `${event.pageX + 10}px`;
+		    popup.style.top = `${event.pageY + 10}px`;
+		});
+
+		title.addEventListener("mouseout", () => {
+		    popup.style.display = "none"; // Hide the popup
+		});
 	
 const textContainer = document.querySelector(".distorted-text");
 const text = textContainer.textContent;
